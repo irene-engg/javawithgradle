@@ -4,6 +4,9 @@ FROM openjdk:17-jdk-slim
 # Set the working directory in the container
 WORKDIR /app
 
+# Copy only necessary files first
+COPY gradlew gradlew
+
 # Make the Gradle wrapper executable
 RUN chmod +x gradlew
 
