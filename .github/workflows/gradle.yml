@@ -38,12 +38,6 @@ jobs:
       - name: Build with Gradle Wrapper
         run: ./gradlew build
 
-      - name: Debug Docker Username
-        run: echo "DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}"
-
-      - name: Debug Docker Password
-        run: echo "DOCKER_PASSWORD=${{ secrets.DOCKER_PASSWORD }}"
-
       # Docker login step (only for Ubuntu)
       - name: Log in to Docker Hub
         if: runner.os == 'Linux'
